@@ -24,7 +24,7 @@ def process_check_command(url,key,host,node_id):
     checkresults = api.check_command(key,url,host)
     #print "Check Results: ",checkresults
     try:
-        if checkresults["command"]["status"] == "completed":
+        if str(checkresults["command"]["status"]) == "completed":
             serverscanresults = api.get_scan_results(host, key, node_id)
             return (serverscanresults)
         return checkresults["command"]["status"]
@@ -35,6 +35,7 @@ def process_check_command(url,key,host,node_id):
         sys.exit()
 
 def exit_routine(serverolist):
+    print "\n Job results: \n"
     for node in serverolist:
         print "Server: ", node.name, " Disposition: ", node.disposition
     sys.exit()
