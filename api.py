@@ -78,9 +78,15 @@ def get_authtoken(host,clientid,clientsecret):
     response = connection.getresponse()
     jsondata =  response.read().decode()
     data = json.loads(jsondata)
-    if 'read+write' not in data['scope']:
-        print "This script requires RW api access.  Exiting"
-        sys.exit(2)
+    try:
+        if 'read+write' not in data['scope']:
+            print "This script requires RW api access.  Exiting"
+            sys.exit(2)
+    except:
+        print "We're having trouble getting a session token.  Please check your API key."
+        print "Error output: "
+        print data
+        sys.exit()
     key = data['access_token']
     connection.close()
     return key
