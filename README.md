@@ -1,5 +1,5 @@
-#Script to run configuration scans across a source group, and move all compliant hosts to the destination group
-
+# Halo Application Membership Control
+This script runs against the Halo API and causes all configuration-compliant hosts in the source group to be moved to the destination group.
 
 ##Before We Begin
 Please have a look at the config.conf file.  You will need to set your clientid and clientsecret or the script simply won't work.
