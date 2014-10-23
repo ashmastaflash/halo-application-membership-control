@@ -20,7 +20,7 @@ def apihit(host,conntype,authtoken,queryurl,reqbody):
     else:
         connection.request(conntype, queryurl, json.dumps(reqbody), tokenheader)
     response = connection.getresponse()
-    respbody = response.read()
+    respbody = response.read().decode('ascii', 'ignore')
     try:
         jsondata = respbody.decode()
         retdata = json.loads(jsondata)
