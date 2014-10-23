@@ -35,7 +35,7 @@ def process_check_command(url,key,host,node_id):
         sys.exit()
 
 def exit_routine(serverolist):
-    print "\n Job results: \n"
+    print "\n\nJob results:\n"
     for node in serverolist:
-        print "Server: ", node.name, " Disposition: ", node.disposition
+        print "  Server: ", node.name, " Disposition: ", node.disposition
     sys.exit()
