@@ -62,7 +62,7 @@ def main(argv):
         url = api.start_server_scan(host,authtoken,serveridno)
         serverolist.append(server.Server(s["hostname"], s["id"], url))
     # All jobs submitted, notify user and check until all are done
-    print "\n\n"
+    print "\n"
     print "All scan jobs have been submitted.  Now checking results.\nPlease stand by..."
     for i in xrange(1, iterations):
         if i % 20 == 0:
