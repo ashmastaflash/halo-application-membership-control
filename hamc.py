@@ -1,6 +1,5 @@
 #!/usr/bin/python
-#
-# This script creates user accounts, or resets passwords if they already exist.
+#This script runs against the Halo API and causes all configuration-compliant hosts in the source group to be moved to the destination group.
 
 import time
 import sys
