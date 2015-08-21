@@ -12,10 +12,10 @@ def main(argv):
     config={}
     #First, we get the vars from the config file
     execfile("config.conf",config)
-    config["usagetext"] = ("hamc.py -s SOURCE_GROUP -d DEST_GROUP\n",
-                 "This script will iterate through all active hosts\n",
-                 "in SOURCE_GROUP, and move every one that completes all\n",
-                 "applicable configuration scans cleanly to DEST_GROUP.")
+    config["usagetext"] = "hamc.py -s SOURCE_GROUP -d DEST_GROUP\n \
+                 This script will iterate through all active hosts\n \
+                 in SOURCE_GROUP, and move every one that completes all\n \
+                 applicable configuration scans cleanly to DEST_GROUP."
     serverolist = []
     # Next, we attempt to parse args from CLI, overriding vars from config file.
     try:
